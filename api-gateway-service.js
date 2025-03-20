@@ -67,38 +67,38 @@ app.post('/comments', (req, res) => {
 
 app.post('/versions', (req, res) => {
     console.log(`Forwarding ${req.method} request to Versioning Service...`);
-    proxy.web(req, res, { target: 'http://localhost:8007' });
+    proxy.web(req, res, { target: 'http://172.31.25.41:8007' });
 });
 
 app.get('/versions/:noteId', (req, res) => {
     console.log(`Forwarding ${req.method} request to Versioning Service...`);
-    proxy.web(req, res, { target: 'http://localhost:8007' });
+    proxy.web(req, res, { target: 'http://172.31.25.41:8007' });
 });
 
 app.delete('/versions/:noteId/:versionIndex', (req, res) => {
     console.log(`Forwarding ${req.method} request to Versioning Service...`);
-    proxy.web(req, res, { target: 'http://localhost:8007' });
+    proxy.web(req, res, { target: 'http://172.31.25.41:8007' });
 });
 
 app.put('/versions/restore/:noteId/:versionIndex', (req, res) => {
     console.log(`Forwarding ${req.method} request to Versioning Service...`);
-    proxy.web(req, res, { target: 'http://localhost:8007' });
+    proxy.web(req, res, { target: 'http://172.31.25.41:8007' });
 });
 
 // ✅ Forward all /admin requests (Admins Only)
 app.get('/admin/users', (req, res) => {
     console.log(`Forwarding ${req.method} request to Admin Service...`);
-    proxy.web(req, res, { target: 'http://localhost:8008' });
+    proxy.web(req, res, { target: 'http://172.31.25.41:8008' });
 });
 
 app.patch('/admin/promote/:id', (req, res) => {
     console.log(`Forwarding ${req.method} request to Admin Service...`);
-    proxy.web(req, res, { target: 'http://localhost:8008' });
+    proxy.web(req, res, { target: 'http://172.31.25.41:8008' });
 });
 
 app.delete('/admin/delete/:id', (req, res) => {
     console.log(`Forwarding ${req.method} request to Admin Service...`);
-    proxy.web(req, res, { target: 'http://localhost:8008' });
+    proxy.web(req, res, { target: 'http://172.31.25.41:8008' });
 });
 
 // ✅ Start API Gateway
