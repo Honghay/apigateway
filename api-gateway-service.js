@@ -32,12 +32,12 @@ app.post('/register/admin', (req, res) => {
 // ✅ Forward /login requests to Authentication Service
 app.post('/login', (req, res) => {
     console.log("Forwarding login request...");
-    proxy.web(req, res, { target: 'http://localhost:8001' });
+    proxy.web(req, res, { target: 'http://172.31.28.113:8001' });
 });
 
 app.post('/notes', (req, res) => {
     console.log("Forwarding login request...");
-    proxy.web(req, res, { target: 'http://localhost:8002' });
+    proxy.web(req, res, { target: 'http://172.31.28.113:8002' });
 });
 
 app.get('/notes/:id', (req, res) => {
