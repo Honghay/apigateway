@@ -26,33 +26,33 @@ app.post('/register/user', (req, res) => {
 // ✅ Forward /register/admin requests to Authentication Service
 app.post('/register/admin', (req, res) => {
     console.log("Forwarding admin registration request...");
-    proxy.web(req, res, { target: 'http://localhost:8001' });
+    proxy.web(req, res, { target: 'http://54.89.247.134:8001' });
 });
 
 // ✅ Forward /login requests to Authentication Service
 app.post('/login', (req, res) => {
     console.log("Forwarding login request...");
-    proxy.web(req, res, { target: 'http://172.31.28.113:8001' });
+    proxy.web(req, res, { target: 'http://54.89.247.134:8001' });
 });
 
 app.post('/notes', (req, res) => {
     console.log("Forwarding login request...");
-    proxy.web(req, res, { target: 'http://172.31.28.113:8002' });
+    proxy.web(req, res, { target: 'http://54.89.247.134:8002' });
 });
 
 app.get('/notes/:id', (req, res) => {
     console.log("Forwarding login request...");
-    proxy.web(req, res, { target: 'http://localhost:8002' });
+    proxy.web(req, res, { target: 'http://54.89.247.134:8002' });
 });
 
 app.get('/stats', (req, res) => {
     console.log("Forwarding login request...");
-    proxy.web(req, res, { target: 'http://localhost:8003' });
+    proxy.web(req, res, { target: 'http://34.239.130.102:8003' });
 });
 
 app.get('/search', (req, res) => {
     console.log("Forwarding login request...");
-    proxy.web(req, res, { target: 'http://localhost:8004' });
+    proxy.web(req, res, { target: 'http://34.239.130.102:8004' });
 });
 
 app.post('/teams', (req, res) => {
@@ -67,38 +67,38 @@ app.post('/comments', (req, res) => {
 
 app.post('/versions', (req, res) => {
     console.log(`Forwarding ${req.method} request to Versioning Service...`);
-    proxy.web(req, res, { target: 'http://172.31.25.41:8007' });
+    proxy.web(req, res, { target: 'http://localhost:8007' });
 });
 
 app.get('/versions/:noteId', (req, res) => {
     console.log(`Forwarding ${req.method} request to Versioning Service...`);
-    proxy.web(req, res, { target: 'http://172.31.25.41:8007' });
+    proxy.web(req, res, { target: 'http://localhost:8007' });
 });
 
 app.delete('/versions/:noteId/:versionIndex', (req, res) => {
     console.log(`Forwarding ${req.method} request to Versioning Service...`);
-    proxy.web(req, res, { target: 'http://172.31.25.41:8007' });
+    proxy.web(req, res, { target: 'http://localhost:8007' });
 });
 
 app.put('/versions/restore/:noteId/:versionIndex', (req, res) => {
     console.log(`Forwarding ${req.method} request to Versioning Service...`);
-    proxy.web(req, res, { target: 'http://172.31.25.41:8007' });
+    proxy.web(req, res, { target: 'http://localhost:8007' });
 });
 
 // ✅ Forward all /admin requests (Admins Only)
 app.get('/admin/users', (req, res) => {
     console.log(`Forwarding ${req.method} request to Admin Service...`);
-    proxy.web(req, res, { target: 'http://172.31.25.41:8008' });
+    proxy.web(req, res, { target: 'http://localhost:8008' });
 });
 
 app.patch('/admin/promote/:id', (req, res) => {
     console.log(`Forwarding ${req.method} request to Admin Service...`);
-    proxy.web(req, res, { target: 'http://172.31.25.41:8008' });
+    proxy.web(req, res, { target: 'http://localhost:8008' });
 });
 
 app.delete('/admin/delete/:id', (req, res) => {
     console.log(`Forwarding ${req.method} request to Admin Service...`);
-    proxy.web(req, res, { target: 'http://172.31.25.41:8008' });
+    proxy.web(req, res, { target: 'http://localhost:8008' });
 });
 
 // ✅ Start API Gateway
