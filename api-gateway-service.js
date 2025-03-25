@@ -57,48 +57,48 @@ app.get('/search', (req, res) => {
 
 app.post('/teams', (req, res) => {
     console.log("Forwarding login request...");
-    proxy.web(req, res, { target: 'http://localhost:8005' });
+    proxy.web(req, res, { target: 'http://44.201.82.53:8005' });
 });
 
 app.post('/comments', (req, res) => {
     console.log("Forwarding login request...");
-    proxy.web(req, res, { target: 'http://localhost:8006' });
+    proxy.web(req, res, { target: 'http://44.201.82.53:8006' });
 });
 
 app.post('/versions', (req, res) => {
     console.log(`Forwarding ${req.method} request to Versioning Service...`);
-    proxy.web(req, res, { target: 'http://localhost:8007' });
+    proxy.web(req, res, { target: 'http://54.89.175.253:8007' });
 });
 
 app.get('/versions/:noteId', (req, res) => {
     console.log(`Forwarding ${req.method} request to Versioning Service...`);
-    proxy.web(req, res, { target: 'http://localhost:8007' });
+    proxy.web(req, res, { target: 'http://54.89.175.253:8007' });
 });
 
 app.delete('/versions/:noteId/:versionIndex', (req, res) => {
     console.log(`Forwarding ${req.method} request to Versioning Service...`);
-    proxy.web(req, res, { target: 'http://localhost:8007' });
+    proxy.web(req, res, { target: 'http://54.89.175.253:8007' });
 });
 
 app.put('/versions/restore/:noteId/:versionIndex', (req, res) => {
     console.log(`Forwarding ${req.method} request to Versioning Service...`);
-    proxy.web(req, res, { target: 'http://localhost:8007' });
+    proxy.web(req, res, { target: 'http://54.89.175.253:8007' });
 });
 
 // ✅ Forward all /admin requests (Admins Only)
 app.get('/admin/users', (req, res) => {
     console.log(`Forwarding ${req.method} request to Admin Service...`);
-    proxy.web(req, res, { target: 'http://localhost:8008' });
+    proxy.web(req, res, { target: 'http://54.89.175.253:8008' });
 });
 
 app.patch('/admin/promote/:id', (req, res) => {
     console.log(`Forwarding ${req.method} request to Admin Service...`);
-    proxy.web(req, res, { target: 'http://localhost:8008' });
+    proxy.web(req, res, { target: 'http://54.89.175.253:8008' });
 });
 
 app.delete('/admin/delete/:id', (req, res) => {
     console.log(`Forwarding ${req.method} request to Admin Service...`);
-    proxy.web(req, res, { target: 'http://localhost:8008' });
+    proxy.web(req, res, { target: 'http://54.89.175.253:8008' });
 });
 
 // ✅ Start API Gateway
